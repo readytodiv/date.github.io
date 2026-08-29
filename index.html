@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>성수 1박 2일 · 9월 3일–4일</title>
+<meta name="description" content="9월 3일~4일 성수 1박 2일 코스 세 가지. 타임라인, 비 대비, 한정선 방문 시간, 예상 비용.">
+<meta property="og:title" content="성수 1박 2일 · 9/3–9/4">
+<meta property="og:description" content="A·B·C 세 가지 코스와 예상 비용을 한 장에.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gothic+A1:wght@400;500;700;800&family=Baloo+2:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF0F8;
+  --card:#FFFFFF;
+  --ink:#3B3550;
+  --ink60:#7C7691;
+  --ink35:#AEA9C0;
+  --line:#E3E3F0;
+  --line2:#F0F0F8;
+  --mint:#4FBFA0;
+  --mint-s:#CFEDE4;
+  --coral:#F2846E;
+  --coral-s:#FBDDD5;
+  --grape:#8B7BD8;
+  --grape-s:#E1DCF7;
+  --sun:#F5C243;
+  --a:var(--mint);
+  --a-s:var(--mint-s);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Gothic A1',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+  font-size:15px;line-height:1.65;word-break:keep-all;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px 80px}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px;border-radius:8px}
+.num{font-family:'Baloo 2',cursive}
+
+/* hero */
+.hero{padding:46px 4px 8px;text-align:center}
+.date-chip{
+  display:inline-block;background:var(--ink);color:#fff;border-radius:999px;
+  padding:6px 16px;font-family:'Baloo 2',cursive;font-weight:600;font-size:13px;letter-spacing:.03em;
+}
+h1{
+  font-family:'Jua',sans-serif;font-weight:400;
+  font-size:clamp(38px,10vw,60px);line-height:1.18;margin:18px 0 0;letter-spacing:-.01em;
+}
+h1 em{font-style:normal;color:var(--coral)}
+.deck{margin:14px auto 0;max-width:34ch;color:var(--ink60);font-size:15px}
+
+/* pins */
+.pins{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0 0}
+.pin{background:var(--card);border-radius:18px;padding:14px 12px;text-align:center;box-shadow:0 2px 0 var(--line)}
+.pin dt{font-family:'Baloo 2',cursive;font-weight:600;font-size:12px;color:var(--coral);margin:0 0 4px}
+.pin dd{margin:0;font-weight:800;font-size:14px;line-height:1.3}
+.pin dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink60);margin-top:3px;line-height:1.45}
+
+/* section */
+section{margin:46px 0 0}
+.sec-head{display:flex;align-items:center;gap:9px;margin:0 0 8px}
+.sec-head .bul{width:11px;height:11px;border-radius:50%;background:var(--sun);flex:0 0 auto}
+h2{font-family:'Jua',sans-serif;font-weight:400;font-size:23px;margin:0;letter-spacing:-.01em}
+.note{font-size:13.5px;color:var(--ink60);margin:0 0 16px;max-width:56ch}
+.note b{color:var(--ink);font-weight:700}
+
+/* weather */
+.wx{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wx-c{background:var(--card);border-radius:20px;padding:18px;box-shadow:0 2px 0 var(--line)}
+.wx-c.rainy{background:#EAF1FA;box-shadow:0 2px 0 #D5E2F2}
+.wx-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.wx-loc{font-weight:800;font-size:14.5px}
+.wx-pct{font-family:'Baloo 2',cursive;font-weight:700;font-size:26px;line-height:1;color:var(--mint)}
+.wx-c.rainy .wx-pct{color:#4A7FBF}
+.wx-sky{margin:10px 0 0;font-size:13.5px;color:var(--ink60)}
+.wx-t{font-family:'Baloo 2',cursive;font-weight:500;font-size:13px;color:var(--ink35);margin:4px 0 0}
+.wx-f{margin:12px 0 0;padding-top:11px;border-top:1.5px dashed var(--line);font-size:12.5px;color:var(--ink60)}
+.wx-c.rainy .wx-f{border-top-color:#D5E2F2}
+
+/* rain switch */
+.sw-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--card);border-radius:20px;padding:14px 16px;margin-top:12px;box-shadow:0 2px 0 var(--line)}
+.sw-bar p{margin:0;flex:1;min-width:190px;font-size:13.5px;color:var(--ink60)}
+.sw-bar p b{color:var(--ink)}
+.sw{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;border-radius:999px;
+  background:var(--line2);color:var(--ink60);padding:9px 16px 9px 12px;font-family:'Gothic A1',sans-serif;font-weight:700;font-size:13px}
+.sw .track{width:32px;height:18px;border-radius:999px;background:var(--ink35);position:relative;transition:background .18s}
+.sw .knob{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform .18s}
+.sw[aria-pressed="true"]{background:#E5EFFB;color:#3C6FA8}
+.sw[aria-pressed="true"] .track{background:#4A7FBF}
+.sw[aria-pressed="true"] .knob{transform:translateX(14px)}
+
+/* plan picker */
+.picker{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+.pcard{
+  background:var(--card);border-radius:22px;border:2.5px solid transparent;
+  padding:14px 12px 15px;cursor:pointer;text-align:center;font-family:inherit;color:var(--ink);
+  box-shadow:0 2px 0 var(--line);transition:border-color .16s,transform .16s;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+}
+.pcard:hover{transform:translateY(-2px)}
+.pcard svg{width:100%;max-width:132px;height:auto;display:block}
+.pcard .nm{font-family:'Jua',sans-serif;font-size:18px;margin-top:6px;line-height:1.2}
+.pcard .tg{font-size:12px;color:var(--ink60);line-height:1.3}
+.pcard .won{font-family:'Baloo 2',cursive;font-weight:600;font-size:13px;color:var(--ink35);margin-top:6px;
+  background:var(--line2);border-radius:999px;padding:2px 11px}
+.pcard[data-plan="A"][aria-selected="true"]{border-color:var(--mint)}
+.pcard[data-plan="B"][aria-selected="true"]{border-color:var(--coral)}
+.pcard[data-plan="C"][aria-selected="true"]{border-color:var(--grape)}
+.pcard[aria-selected="true"] .won{background:var(--a-s);color:var(--ink)}
+
+/* plan head */
+.phead{background:var(--card);border-radius:22px;padding:18px 20px 19px;margin-top:12px;box-shadow:0 2px 0 var(--line)}
+.thesis{margin:0;font-size:15px}
+.load{display:flex;align-items:center;gap:9px;margin-top:13px;flex-wrap:wrap}
+.load-lb{font-family:'Jua',sans-serif;font-size:13px;color:var(--ink60)}
+.dots{display:flex;gap:5px}
+.dots i{width:14px;height:14px;border-radius:50%;background:var(--line);display:block}
+.dots i.on{background:var(--a)}
+.load-tx{font-size:12.5px;color:var(--ink60)}
+
+/* timeline */
+.day{margin-top:22px}
+.daylb{display:flex;align-items:center;gap:9px;margin:0 0 9px;padding-left:4px}
+.daylb .pill{background:var(--a);color:#fff;border-radius:999px;padding:3px 12px;font-family:'Jua',sans-serif;font-size:13px}
+.daylb .sub{font-family:'Baloo 2',cursive;font-weight:600;font-size:13px;color:var(--ink35)}
+.tl{background:var(--card);border-radius:22px;padding:6px 4px;box-shadow:0 2px 0 var(--line)}
+.row{display:grid;grid-template-columns:66px 1fr;align-items:start}
+.row+.row{border-top:1.5px dashed var(--line2)}
+.tm{font-family:'Baloo 2',cursive;font-weight:600;font-size:13.5px;color:var(--ink60);padding:15px 0 15px;text-align:center;position:relative}
+.tm::after{content:"";position:absolute;right:-4px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--line)}
+.row.fix .tm{color:var(--a)}
+.row.fix .tm::after{background:var(--a)}
+.bd{padding:15px 16px 16px 16px}
+.ttl{margin:0;font-family:'Jua',sans-serif;font-size:16px;line-height:1.35}
+.ttl .fx{display:inline-block;background:var(--a-s);color:var(--ink);border-radius:999px;font-family:'Gothic A1',sans-serif;font-weight:700;font-size:10.5px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.dsc{margin:5px 0 0;font-size:13.5px;color:var(--ink60)}
+.meta{margin:8px 0 0;display:flex;flex-wrap:wrap;gap:5px}
+.meta span{background:var(--line2);border-radius:999px;padding:3px 10px;font-size:11.5px;color:var(--ink60)}
+.rn{margin:9px 0 0;background:#EAF1FA;border-radius:14px;padding:9px 12px;font-size:13px;color:#3C6FA8}
+.rn b{font-weight:800}
+
+/* budget */
+.bud{background:var(--card);border-radius:22px;padding:18px 20px 20px;margin-top:22px;box-shadow:0 2px 0 var(--line)}
+.bud h3{font-family:'Jua',sans-serif;font-size:17px;margin:0 0 3px}
+.bud .cap{margin:0 0 13px;font-size:12.5px;color:var(--ink35)}
+.li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-size:13.5px;border-bottom:1.5px dashed var(--line2)}
+.li span:first-child{color:var(--ink60)}
+.li span:last-child{font-family:'Baloo 2',cursive;font-weight:600;white-space:nowrap}
+.tot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;
+  background:var(--a-s);border-radius:16px;padding:13px 16px}
+.tot .lb{font-family:'Jua',sans-serif;font-size:15px}
+.tot .vl{font-family:'Baloo 2',cursive;font-weight:700;font-size:20px}
+.bud .out{margin:11px 0 0;font-size:12.5px;color:var(--ink60)}
+
+/* chart */
+.chart{background:var(--card);border-radius:22px;padding:20px 16px 16px;box-shadow:0 2px 0 var(--line)}
+.bars{display:flex;align-items:flex-end;gap:5px;height:112px;margin-bottom:7px}
+.bar{flex:1;background:none;border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.bar .fl{background:var(--line);border-radius:8px 8px 4px 4px;width:100%;transition:background .16s}
+.bar:hover .fl,.bar[aria-pressed="true"] .fl{background:var(--ink35)}
+.bar.best .fl{background:var(--mint-s)}
+.bar.best:hover .fl,.bar.best[aria-pressed="true"] .fl{background:var(--mint)}
+.xax{display:flex;gap:5px}
+.xax span{flex:1;text-align:center;font-family:'Baloo 2',cursive;font-weight:500;font-size:10px;color:var(--ink35)}
+.cout{margin-top:14px;padding-top:13px;border-top:1.5px dashed var(--line2);font-size:13.5px;min-height:46px;color:var(--ink60)}
+.cout b{color:var(--ink)}
+.cout .hh{font-family:'Baloo 2',cursive;font-weight:700;color:var(--mint)}
+.lgd{display:flex;gap:16px;margin-top:11px;font-size:11.5px;color:var(--ink35)}
+.lgd i{width:11px;height:11px;border-radius:4px;display:inline-block;margin-right:6px;vertical-align:-1px}
+.lgd i.m{background:var(--mint)}
+.lgd i.g{background:var(--line)}
+
+/* verdict */
+.vd{background:var(--ink);color:#D9D5E6;border-radius:22px;padding:24px 22px}
+.vd .lede{margin:0 0 4px;font-family:'Baloo 2',cursive;font-weight:600;font-size:13px;color:var(--sun)}
+.vd h3{font-family:'Jua',sans-serif;font-size:22px;color:#fff;margin:0 0 14px;line-height:1.35}
+.vd p{margin:0 0 11px;font-size:14px}
+.vd p:last-child{margin-bottom:0}
+.vd b{color:#fff}
+.math{background:rgba(255,255,255,.07);border-radius:16px;padding:13px 15px;margin:0 0 14px;
+  font-family:'Baloo 2',cursive;font-weight:500;font-size:14px;color:#F3DFAE;line-height:2}
+.math u{text-decoration:none;color:#8E88A6;display:inline-block;width:16px}
+.math strong{color:#fff}
+
+/* checklist */
+.checks{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 2px 0 var(--line)}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;width:100%;text-align:left;
+  background:none;border:0;font-family:inherit;font-size:14px;color:var(--ink);cursor:pointer}
+.chk+.chk{border-top:1.5px dashed var(--line2)}
+.chk .bx{width:20px;height:20px;border-radius:7px;background:var(--line2);flex:0 0 auto;margin-top:2px;
+  display:flex;align-items:center;justify-content:center;font-size:12px;color:transparent}
+.chk[aria-pressed="true"] .bx{background:var(--mint);color:#fff}
+.chk[aria-pressed="true"] .lb{color:var(--ink35);text-decoration:line-through}
+.chk .lb{flex:1;font-weight:700}
+.chk .lb small{display:block;font-weight:400;font-size:12.5px;color:var(--ink60);margin-top:2px;text-decoration:none}
+.chk[aria-pressed="true"] .lb small{color:var(--ink35)}
+
+footer{margin-top:48px;background:var(--card);border-radius:22px;padding:20px 22px;font-size:12.5px;color:var(--ink60);box-shadow:0 2px 0 var(--line)}
+footer p{margin:0 0 9px}
+footer p:last-child{margin-bottom:0}
+footer b{color:var(--ink)}
+
+@media (max-width:640px){
+  .pins{grid-template-columns:1fr 1fr}
+  .wx{grid-template-columns:1fr}
+  .picker{grid-template-columns:1fr}
+  .pcard{flex-direction:row;align-items:center;gap:14px;text-align:left;padding:12px 16px}
+  .pcard svg{width:86px;flex:0 0 86px}
+  .pcard .txt{flex:1}
+  .pcard .nm{margin-top:0}
+  .pcard .won{display:inline-block;margin-top:5px}
+  .row{grid-template-columns:56px 1fr}
+  .bd{padding-left:12px}
+  .xax span:nth-child(even){opacity:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <span class="date-chip">2026. 09. 03 THU — 09. 04 FRI</span>
+  <h1>둘 다 <em>성수</em>는<br>처음이니까</h1>
+  <p class="deck">1박 2일 30시간. 세 가지 코스를 준비했어요. 셋 다 오후에 쉬는 시간이 들어가 있습니다.</p>
+  <dl class="pins">
+    <div class="pin"><dt>THU 10:00</dt><dd>강남역 만남<small>고속터미널에서 약 12분</small></dd></div>
+    <div class="pin"><dt>THU 15:00</dt><dd>포코성수 체크인<small>성수역 도보 2분</small></dd></div>
+    <div class="pin"><dt>FRI 11:00</dt><dd>체크아웃<small>짐은 보관함으로</small></dd></div>
+    <div class="pin"><dt>FRI 16:00</dt><dd>배웅<small>강변역 2호선 3정거장</small></dd></div>
+  </dl>
+</header>
+
+<section>
+  <div class="sec-head"><span class="bul"></span><h2>비, 확인했어요</h2></div>
+  <p class="note">기상청 8월 29일 06시 중기예보 기준. 서울은 이틀 다 구름많음이고, 비는 <b>속초 쪽</b>에 걸려 있어요.</p>
+  <div class="wx">
+    <div class="wx-c">
+      <div class="wx-top"><span class="wx-loc">서울 · 9/3–9/4</span><span class="wx-pct">20%</span></div>
+      <p class="wx-sky">구름많음 — 목·금 오전 오후 모두</p>
+      <p class="wx-t">목 22 / 30℃ · 금 21 / 28℃</p>
+      <p class="wx-f">데이트 당일 서울은 사실상 맑음 전제로 짜도 됩니다. 낮 30도라 비보다 <b>그늘과 실내 배분</b>이 더 중요해요.</p>
+    </div>
+    <div class="wx-c rainy">
+      <div class="wx-top"><span class="wx-loc">속초 · 9/3</span><span class="wx-pct">60%</span></div>
+      <p class="wx-sky">흐리고 비 — 오전 오후 모두</p>
+      <p class="wx-t">강릉 기준 21 / 26℃</p>
+      <p class="wx-f">출발할 때 비를 만날 수 있어요. <b>우산과 버스 지연</b>은 감안해두는 게 좋습니다. 기상청도 이 기간 변동성이 크다고 단서를 달았으니 전날 밤에 다시 보세요.</p>
+    </div>
+  </div>
+  <div class="sw-bar">
+    <p><b>비 대비 스위치</b> — 켜면 야외 일정이 실내 대안으로 바뀝니다. 예보가 빗나갔을 때 당일에 누르세요.</p>
+    <button class="sw" id="rainBtn" aria-pressed="false">
+      <span class="track"><span class="knob"></span></span><span id="rainLabel">비 대비 끄기</span>
+    </button>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="bul"></span><h2>세 가지 중에 고르기</h2></div>
+  <p class="note">고정 일정(색 있는 시각)은 세 안 모두 같아요. 달라지는 건 그 사이를 뭘로 채우냐입니다.</p>
+  <div class="picker" role="tablist" aria-label="코스 선택" id="picker"></div>
+
+  <div class="phead">
+    <p class="thesis" id="thesis"></p>
+    <div class="load">
+      <span class="load-lb">체력 부담</span>
+      <span class="dots" id="dots"></span>
+      <span class="load-tx" id="loadTx"></span>
+    </div>
+  </div>
+
+  <div id="panel" role="tabpanel"></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="bul"></span><h2>한정선, 몇 시에 갈까</h2></div>
+  <p class="note">연무장길 43-1 · 성수역 3·4번 출구 도보 3분 · 10:30–22:00 · <b>포장 전용이라 앉을 자리는 없어요.</b> 막대를 눌러보세요.</p>
+  <div class="chart">
+    <div class="bars" id="bars"></div>
+    <div class="xax" id="xax"></div>
+    <div class="cout" id="cout">막대를 누르면 그 시간대 설명이 나와요.</div>
+    <div class="lgd"><span><i class="m"></i>추천 구간</span><span><i class="g"></i>가능하지만 아쉬움</span></div>
+  </div>
+  <p class="note" style="margin-top:14px">혼잡도는 운영시간과 후기(성수점은 분업이 잘 돼 5분 내외로 빠지고, 인기 맛은 저녁에 품절)를 근거로 한 <b>추정치</b>예요. 실제 줄은 그날 팝업 일정에 크게 좌우됩니다. 냉장 보관 시 2일 이내 섭취 권장이라, 가져갈 거면 둘째 날 사고 보냉백을 요청하세요.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="bul"></span><h2>22시 오디세이는 말릴게요</h2></div>
+  <div class="vd">
+    <p class="lede">THE ODYSSEY · 172 MIN</p>
+    <h3>끝나면 새벽 1시,<br>다음 날이 통째로 사라져요</h3>
+    <div class="math">
+      22:00 상영 시작<br>
+      <u>+</u> 광고·예고편 약 10분<br>
+      <u>+</u> 본편 172분 (2시간 52분)<br>
+      <u>=</u> <strong>약 01:00 종료</strong>
+    </div>
+    <p>여기에 성수까지 돌아와 씻고 눕는 시간을 더하면 실제로 잘 수 있는 건 <b>7시간 남짓</b>이고, 다음 날은 11시 체크아웃에 오후 4시까지 함께 있어야 하는 일정이에요. 하루 손해가 그대로 둘째 날로 넘어옵니다.</p>
+    <p><b>보고 싶다면 회차를 앞으로 당기세요.</b> 17:30 저녁 → 19시대 회차면 22시 조금 넘어 끝나고, 호텔까지 걸어서 마무리됩니다. C안이 정확히 그 구성이에요.</p>
+    <p><b>어디서 볼까:</b> 전 분량을 IMAX 카메라로 찍은 작품이라 화면값을 하려면 <b>CGV 왕십리 IMAX</b>(성수역 2호선 2정거장)가 정답이고, 조용하게 보고 싶으면 <b>메가박스 성수</b>(왕십리로 50)가 사람이 적다는 평이 많아요. 개봉 한 달 차라도 <b>전날까지 예매</b>는 해두세요.</p>
+    <p><b>안 볼 거면</b> 그 자리를 4층 창가 와인바로 바꾸는 게 낫습니다. 앉아서 얘기한 시간이 제일 오래 남아요. A안과 B안이 그렇게 짜여 있습니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="bul"></span><h2>전날 밤에 확인할 것</h2></div>
+  <div class="checks" id="checks"></div>
+</section>
+
+<footer>
+  <p><b>호텔 포코 성수</b> · 서울 성동구 성수이로 96 · 02-3677-6676 · 체크인 15:00 / 체크아웃 11:00</p>
+  <p><b>무인 짐보관함</b> 호텔 1·2층 · 대형 최초 5시간 8,000원 / 소형 4,000원. 2025년 7월부터 무료 보관은 종료됐어요. 만실이면 성수역 물품보관함.</p>
+  <p><b>돌아가는 길</b> 동서울터미널(강변역, 성수에서 2호선 3정거장)에서 속초행 시외버스 하루 34회, 첫차 06:05 막차 21:00. 재건축으로 임시터미널이 운영될 수 있으니 위치는 당일 앱에서 확인하세요. 표를 경부로 끊었다면 성수→고속터미널은 2호선 교대 환승 3호선, 약 35분.</p>
+  <p>날씨는 기상청 2026-08-29 06:00 발표 중기예보, 영업시간과 위치는 각 매장 공개 정보 기준. 비용은 추정치이고 팝업·전시는 주 단위로 바뀌니 당일 아침에 한 번 더 보세요.</p>
+</footer>
+</div>
+
+<script>
+/* ---------- illustrations ---------- */
+const ART = {
+A:`<svg viewBox="0 0 140 96" role="img" aria-label="침대와 달">
+<circle cx="112" cy="22" r="12" fill="#F5C243"/><circle cx="106" cy="18" r="10" fill="#fff"/>
+<g fill="none" stroke="#3B3550" stroke-width="2.6" stroke-linecap="round">
+<path d="M80 26h9l-9 10h9"/><path d="M92 14h7l-7 8h7"/></g>
+<rect x="14" y="44" width="15" height="40" rx="7" fill="#CFEDE4" stroke="#3B3550" stroke-width="2.6"/>
+<rect x="14" y="62" width="112" height="22" rx="9" fill="#fff" stroke="#3B3550" stroke-width="2.6"/>
+<path d="M58 62h60a8 8 0 0 1 8 8v6a8 8 0 0 1-8 8H58z" fill="#4FBFA0" stroke="#3B3550" stroke-width="2.6"/>
+<rect x="30" y="54" width="27" height="15" rx="7" fill="#CFEDE4" stroke="#3B3550" stroke-width="2.6"/>
+<path d="M22 84v6M118 84v6" stroke="#3B3550" stroke-width="2.6" stroke-linecap="round"/>
+</svg>`,
+B:`<svg viewBox="0 0 140 96" role="img" aria-label="가게 차양과 쇼핑백">
+<rect x="30" y="38" width="80" height="46" rx="8" fill="#fff" stroke="#3B3550" stroke-width="2.6"/>
+<rect x="42" y="50" width="24" height="20" rx="5" fill="#FBDDD5" stroke="#3B3550" stroke-width="2.6"/>
+<rect x="76" y="50" width="22" height="34" rx="5" fill="#FBDDD5" stroke="#3B3550" stroke-width="2.6"/>
+<g clip-path="url(#aw)">
+<rect x="24" y="22" width="92" height="18" fill="#fff"/>
+<rect x="24" y="22" width="16" height="18" fill="#F2846E"/>
+<rect x="56" y="22" width="16" height="18" fill="#F2846E"/>
+<rect x="88" y="22" width="16" height="18" fill="#F2846E"/>
+</g>
+<clipPath id="aw"><path d="M28 22h84a4 4 0 0 1 4 4v14H24V26a4 4 0 0 1 4-4z"/></clipPath>
+<path d="M28 22h84a4 4 0 0 1 4 4v14H24V26a4 4 0 0 1 4-4z" fill="none" stroke="#3B3550" stroke-width="2.6"/>
+<path d="M12 66h18v18H12z" fill="#F2846E" stroke="#3B3550" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M17 66v-4a4 4 0 0 1 8 0v4" fill="none" stroke="#3B3550" stroke-width="2.6"/>
+<path d="M112 70h16v14h-16z" fill="#FBDDD5" stroke="#3B3550" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M116 70v-3a4 4 0 0 1 8 0v3" fill="none" stroke="#3B3550" stroke-width="2.6"/>
+</svg>`,
+C:`<svg viewBox="0 0 140 96" role="img" aria-label="영화 스크린과 팝콘">
+<rect x="26" y="14" width="92" height="54" rx="8" fill="#E1DCF7" stroke="#3B3550" stroke-width="2.6"/>
+<rect x="34" y="22" width="76" height="38" rx="5" fill="#fff" stroke="#3B3550" stroke-width="2.2"/>
+<path d="M64 32l20 9-20 9z" fill="#8B7BD8" stroke="#3B3550" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M52 68l-8 16M92 68l8 16" stroke="#3B3550" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M12 62h30l-4 24H16z" fill="#fff" stroke="#3B3550" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M22 62l-2 24M32 62l2 24" stroke="#F2846E" stroke-width="2.4"/>
+<circle cx="18" cy="58" r="6" fill="#F5C243" stroke="#3B3550" stroke-width="2.4"/>
+<circle cx="30" cy="54" r="7" fill="#F5C243" stroke="#3B3550" stroke-width="2.4"/>
+<circle cx="40" cy="60" r="5" fill="#F5C243" stroke="#3B3550" stroke-width="2.4"/>
+</svg>`
+};
+
+/* ---------- plans ---------- */
+const PLANS = {
+A:{
+  nm:"잠 먼저", tg:"회복 우선", won:"21–27만",
+  thesis:"움직임을 최소로 줄이고 오후에 90분을 통째로 비워두는 안. 성수 핵심만 걸어서 훑고 나머지는 앉아 있습니다. 이동이 길었다 싶으면 고민 없이 이걸로.",
+  load:2, loadTx:"걷는 거리 짧음 · 낮잠 90분 · 야간 일정 없음",
+  d1:[
+    {t:"10:00",fix:1,ttl:"강남역에서 만나기",dsc:"바로 지하철 타지 말고 근처 카페에서 20분만 앉으세요. 짐 정리하고 숨 돌리는 이 시간이 하루 전체 컨디션을 정합니다.",meta:[]},
+    {t:"10:30",ttl:"2호선 타고 성수로",dsc:"강남역에서 잠실 방면으로 타면 환승 없이 한 번에 갑니다. 앉을 수 있으면 눈 붙이기 좋은 구간.",meta:["약 25분","환승 0회"]},
+    {t:"11:00",ttl:"호텔에 짐부터 맡기기",dsc:"성수역에서 도보 2분. 캐리어 끌고 연무장길 걷는 건 최악이에요. 보관함에 넣고 손을 비웁니다.",meta:["대형 8,000원 / 5시간"]},
+    {t:"11:20",ttl:"한정선",dsc:"오픈 직후라 종류가 가장 많고 줄은 가장 짧은 시간대. 포장 전용이라 2~3개만 사서 들고 나옵니다.",meta:["연무장길 43-1","포장 전용"]},
+    {t:"11:50",ttl:"점심 · 오밀 성수",dsc:"오므라이스와 파스타. 11:30 오픈이라 12시 웨이팅이 붙기 직전 타이밍이에요. 실패하면 바로 근처 브리비트로.",meta:["아차산로5길 37-1","11:30–21:15"]},
+    {t:"13:20",ttl:"서울숲 그늘 산책",dsc:"아까 산 모찌를 여기서 먹습니다. 코스를 정하지 말고 벤치 보이면 앉으세요. 낮 30도라 오래 걷는 건 금물.",rain:"디뮤지엄(왕십리로 83-21, 목 11:00–18:00)으로 대체. 서울숲 바로 옆이라 동선이 그대로예요.",meta:["1시간이면 충분"]},
+    {t:"14:40",ttl:"성수역으로 복귀",dsc:"편의점 들러서 밤에 먹을 것 미리 사두면 저녁에 다시 안 나가도 됩니다.",meta:[]},
+    {t:"15:00",fix:1,ttl:"체크인하고 낮잠",dsc:"90분 자고 17시 알람. 이 항목은 옵션이 아니라 일정이에요. 오후에 한 번 쉬어두면 저녁 시간이 완전히 달라집니다.",meta:["알람 두 개"]},
+    {t:"17:15",ttl:"씻고 정비",dsc:"여기서 한 번 씻으면 하루가 리셋됩니다.",meta:[]},
+    {t:"18:00",ttl:"저녁 · 아웃오브오더",dsc:"한식과 이탈리안을 섞은 집. 17시에 저녁 영업을 열어서 6시면 아직 조용합니다. 안 되면 그리노(성수이로 147)로.",meta:["아차산로13길 2","17:00–22:00"]},
+    {t:"20:00",ttl:"뚝섬한강공원",dsc:"성수역에서 건대입구 환승 7호선 뚝섬유원지역. 편의점 라면 하나 놓고 강 보면서 앉아 있는 게 오늘의 마지막 일정입니다.",rain:"호텔로 바로 복귀. 편의점 야식과 넷플릭스로 대체하고, 그만큼 일찍 자면 둘째 날이 훨씬 좋아요.",meta:["약 15분","야경 좋음"]},
+    {t:"21:40",ttl:"호텔",dsc:"사온 것 펼쳐놓고 아무 얘기나. 23시 전에 불 끄는 걸 목표로.",meta:[]}
+  ],
+  d2:[
+    {t:"09:30",ttl:"늦게 일어나기",dsc:"둘째 날은 알람 없이. 이 일정에서 제일 사치스러운 시간입니다.",meta:[]},
+    {t:"11:00",fix:1,ttl:"체크아웃",dsc:"짐은 다시 무인보관함에. 오후 4시까지 손 비우고 다닙니다.",meta:[]},
+    {t:"11:30",ttl:"브런치 · 프렌즈앤야드",dsc:"연무장15길 11. 파스타와 수프 평이 좋고 야외 자리가 있어요. 웨이팅 리스트를 적는 방식입니다.",meta:["10:00–18:00"]},
+    {t:"13:00",ttl:"소품샵 두 곳",dsc:"포인트오브뷰(연무장길 18, 12시 오픈)에서 문구 구경하고 성수연방 한 바퀴. 사는 것보다 고르는 시간이 재밌는 곳들이에요.",meta:["둘 다 실내","도보 5분"]},
+    {t:"14:40",ttl:"마지막 카페",dsc:"프롤라(연무장17길 5) 같은 조용한 데 앉아서 오늘 찍은 사진 같이 보기.",meta:[]},
+    {t:"15:40",ttl:"짐 찾고 이동",dsc:"성수역에서 강변역까지 2호선 3정거장, 7분.",meta:[]},
+    {t:"16:00",fix:1,ttl:"배웅",dsc:"",meta:[]}
+  ],
+  cost:[
+    ["지하철 (2인 · 이틀)","18,000"],
+    ["짐보관함 (2회)","16,000"],
+    ["한정선 4~6개","20,000–30,000"],
+    ["첫날 점심","30,000–40,000"],
+    ["첫날 저녁","50,000–70,000"],
+    ["한강 · 야식","25,000–35,000"],
+    ["둘째날 브런치","35,000–45,000"],
+    ["마지막 카페","15,000–20,000"]
+  ],
+  total:"21만 – 27만원"
+},
+B:{
+  nm:"성수 정주행", tg:"팝업 · 소품샵", won:"29–39만",
+  thesis:"성수를 성수답게 보는 안. 팝업과 편집숍, 루프탑 바를 밀도 있게 넣고 대신 낮잠은 60분으로 줄입니다. 구경하는 걸 좋아하는 편이면 이쪽.",
+  load:4, loadTx:"걷는 거리 많음 · 낮잠 60분 · 밤 22시까지",
+  d1:[
+    {t:"10:00",fix:1,ttl:"강남역에서 만나기",dsc:"오늘은 볼 게 많아서 앞에서 시간을 벌어둡니다.",meta:[]},
+    {t:"10:20",ttl:"2호선 타고 성수로",dsc:"환승 없이 약 25분.",meta:[]},
+    {t:"10:50",ttl:"호텔 짐보관함",dsc:"성수역 도보 2분. 팝업 돌 거면 캐리어는 절대 안 됩니다.",meta:["대형 8,000원 / 5시간"]},
+    {t:"11:10",ttl:"한정선",dsc:"오픈 40분 후. 종류 최다에 대기 최소 구간이라 여기서 해결하는 게 제일 깔끔해요.",meta:["연무장길 43-1"]},
+    {t:"11:40",ttl:"점심 · 그리노",dsc:"성수이로 147. 성수에서 파스타로 이름난 곳이라 예약 앱을 쓰는 게 안전합니다. 자리가 작아서 12시 넘으면 대기가 붙어요.",meta:["11:30–22:00","예약 권장"]},
+    {t:"13:10",ttl:"연무장길 팝업 돌기",dsc:"성수 팝업은 주 단위로 통째로 바뀝니다. 전날 밤에 앱으로 목요일 오픈 목록만 확인해서 세 개 정도 찍어두면 당일에 헤매지 않아요.",rain:"연무장길은 실외 이동이 많아요. 비가 오면 LCDC 서울(연무장17길 10) 한 건물에서 층별로 도는 걸로 바꾸면 우산 안 펴고 두 시간이 갑니다.",meta:["당일 확인 필수","평일이라 대기 짧음"]},
+    {t:"14:20",ttl:"성수연방",dsc:"옛 공장을 고친 복합공간. 크지 않아서 30분이면 한 바퀴 돌고, 체크인 시간 맞추기 좋은 완충 구간입니다.",meta:["성수이로14길 14","10:30–21:00"]},
+    {t:"15:00",fix:1,ttl:"체크인하고 60분 휴식",dsc:"자든 눕든 한 시간은 방에 있습니다. 오후 일정이 남아 있어서 여기를 건너뛰면 저녁에 무너져요.",meta:["16:10 알람"]},
+    {t:"16:20",ttl:"포인트오브뷰",dsc:"연무장길 18. 문구와 도구를 전시처럼 진열해둔 3층 편집숍. 안 사도 재밌고, 서로 뭘 고르는지 보는 게 포인트입니다.",meta:["12:00–20:00"]},
+    {t:"17:30",ttl:"LCDC 서울",dsc:"연무장17길 10. 층마다 다른 브랜드가 들어와 있어서 한 곳에서 여러 곳 본 기분이 나요. 20시 마감이라 저녁 전에 넣었습니다.",meta:["10:00–20:00"]},
+    {t:"18:40",ttl:"저녁",dsc:"아웃오브오더(아차산로13길 2) 또는 브리비트(성수동1가 13-191). 이 시간엔 대기가 있을 수 있으니 걸으면서 웨이팅부터 걸어두세요.",meta:[]},
+    {t:"20:30",ttl:"성수옥상 또는 신데렐라바",dsc:"성수옥상은 연무장17길 5의 4층 와인바, 신데렐라바는 성수동2가 289-247의 칵테일바. 둘 다 목요일 자정까지 열고 창가 자리가 좋아요. 오늘 본 것들 얘기하는 시간.",rain:"둘 다 실내라 그대로 진행. 비 오는 날 4층 창가는 오히려 더 좋습니다.",meta:["17:00–24:00","자리 좁음 · 예약 권장"]},
+    {t:"22:00",ttl:"호텔",dsc:"걸은 양이 많은 날이라 바로 씻고 눕는 게 낫습니다.",meta:[]}
+  ],
+  d2:[
+    {t:"09:30",ttl:"기상",dsc:"",meta:[]},
+    {t:"11:00",fix:1,ttl:"체크아웃",dsc:"짐은 무인보관함에.",meta:[]},
+    {t:"11:30",ttl:"디뮤지엄",dsc:"왕십리로 83-21, 서울숲 옆. 기둥 없는 두 개 층 전시장이라 공간 자체가 볼거리예요. 금요일은 19시까지. 전시가 자주 바뀌니 현재 전시만 확인하고 가세요.",meta:["금 11:00–19:00","월요일 휴관"]},
+    {t:"13:20",ttl:"서울숲 점심 · 산책",dsc:"디뮤지엄 나와서 바로 옆. 앉을 곳이 많아 마무리 대화하기 좋습니다.",rain:"LCDC 4층 제이드앤워터(9:00–17:00)에서 늦은 브런치. 창 넓은 옥상 공간이라 비 오는 날 뷰가 괜찮아요.",meta:[]},
+    {t:"15:00",ttl:"마지막 카페",dsc:"프롤라(연무장17길 5) 또는 아무 데나 조용한 곳.",meta:[]},
+    {t:"15:40",ttl:"짐 찾고 이동",dsc:"성수역에서 강변역까지 2호선 3정거장.",meta:[]},
+    {t:"16:00",fix:1,ttl:"배웅",dsc:"",meta:[]}
+  ],
+  cost:[
+    ["지하철 (2인 · 이틀)","18,000"],
+    ["짐보관함 (2회)","16,000"],
+    ["한정선 4~6개","20,000–30,000"],
+    ["첫날 점심","35,000–45,000"],
+    ["팝업 · 낮 카페","15,000–25,000"],
+    ["첫날 저녁","55,000–75,000"],
+    ["와인바 / 칵테일바","50,000–75,000"],
+    ["디뮤지엄 2인","30,000–40,000"],
+    ["둘째날 브런치","35,000–45,000"],
+    ["마지막 카페","15,000–20,000"]
+  ],
+  total:"29만 – 39만원"
+},
+C:{
+  nm:"오디세이", tg:"영화 포함", won:"25–32만",
+  thesis:"오디세이를 넣되 22시가 아니라 19시대 회차로 당긴 안. 낮잠을 100분으로 늘리고 저녁을 17시로 앞당겨서, 영화가 끝나도 23시 전에 방에 들어갑니다.",
+  load:4, loadTx:"낮잠 100분 · 영화 172분 · 23시 귀가",
+  d1:[
+    {t:"10:00",fix:1,ttl:"강남역에서 만나기",dsc:"저녁에 172분을 앉아 있어야 하는 날이라, 낮에는 체력을 아껴야 합니다.",meta:[]},
+    {t:"10:30",ttl:"2호선 타고 성수로",dsc:"환승 없이 약 25분.",meta:[]},
+    {t:"11:00",ttl:"호텔 짐보관함",dsc:"성수역 도보 2분.",meta:["대형 8,000원 / 5시간"]},
+    {t:"11:20",ttl:"한정선",dsc:"오픈 직후 구간. 오늘은 저녁이 이르고 밤엔 극장에 있으니 낮에 해결해두는 게 유일한 타이밍이에요.",meta:["연무장길 43-1"]},
+    {t:"11:50",ttl:"점심 · 오밀 성수",dsc:"저녁을 17시에 먹으니 점심은 가볍게 가는 게 맞습니다.",meta:["11:30–21:15"]},
+    {t:"13:10",ttl:"연무장길 한 바퀴",dsc:"팝업 한두 개와 성수연방 정도로 끊습니다. 오늘은 욕심내면 영화에서 잡니다.",rain:"LCDC 서울(연무장17길 10) 실내 한 건물로 대체. 이동 없이 시간 보내기 좋아요.",meta:["1시간 이내로 끊기"]},
+    {t:"14:40",ttl:"성수역으로 복귀",dsc:"",meta:[]},
+    {t:"15:00",fix:1,ttl:"체크인하고 낮잠 100분",dsc:"이 안에서 가장 중요한 항목. 16:40 알람. 여기서 못 자면 영화표를 버리는 셈이에요.",meta:["알람 두 개"]},
+    {t:"16:50",ttl:"씻고 정비",dsc:"",meta:[]},
+    {t:"17:20",ttl:"이른 저녁",dsc:"아웃오브오더가 17시에 저녁 영업을 엽니다. 열자마자 들어가면 대기 없이 한 시간 안에 나올 수 있어요.",meta:["아차산로13길 2","17:00 오픈"]},
+    {t:"18:30",ttl:"극장으로 이동",dsc:"CGV 왕십리 IMAX는 성수역에서 2호선 2정거장. 전 분량 IMAX 카메라로 찍은 영화라 화면이 클수록 값을 합니다. 조용한 걸 원하면 메가박스 성수로.",meta:["2호선 2정거장","전날까지 예매"]},
+    {t:"19:20",ttl:"오디세이 · 172분",dsc:"광고 포함 약 22:20 종료. 중간에 나오기 어려운 영화라 시작 전에 화장실은 다녀오고, 음료는 절반만 사세요.",meta:["2시간 52분"]},
+    {t:"22:40",ttl:"호텔 복귀",dsc:"성수역 내려서 도보 2분. 영화 얘기는 걸으면서 하는 게 제일 재밌습니다.",meta:[]}
+  ],
+  d2:[
+    {t:"09:30",ttl:"늦잠",dsc:"어제 늦게 잤으니 둘째 날 오전은 통째로 비워둡니다.",meta:[]},
+    {t:"11:00",fix:1,ttl:"체크아웃",dsc:"짐은 무인보관함에.",meta:[]},
+    {t:"11:30",ttl:"브런치 · 프렌즈앤야드",dsc:"연무장15길 11. 늦은 아침 겸 점심으로 하나만 제대로.",meta:["10:00–18:00"]},
+    {t:"13:00",ttl:"서울숲 산책",dsc:"어제 못 간 곳. 앉을 데가 많아서 체력 회복에도 맞아요.",rain:"디뮤지엄(왕십리로 83-21, 금 11:00–19:00)으로 대체. 서울숲 바로 옆이라 동선 그대로예요.",meta:[]},
+    {t:"14:40",ttl:"소품샵 또는 카페",dsc:"포인트오브뷰(12:00–20:00)에서 30분, 그 다음 조용한 카페.",meta:[]},
+    {t:"15:40",ttl:"짐 찾고 이동",dsc:"성수역에서 강변역까지 2호선 3정거장.",meta:[]},
+    {t:"16:00",fix:1,ttl:"배웅",dsc:"",meta:[]}
+  ],
+  cost:[
+    ["지하철 (2인 · 이틀)","20,000"],
+    ["짐보관함 (2회)","16,000"],
+    ["한정선 4~6개","20,000–30,000"],
+    ["첫날 점심","30,000–40,000"],
+    ["이른 저녁","50,000–65,000"],
+    ["영화 2인 (IMAX)","38,000–44,000"],
+    ["팝콘 콤보","12,000–15,000"],
+    ["야식","15,000–20,000"],
+    ["둘째날 브런치","35,000–45,000"],
+    ["마지막 카페","15,000–20,000"]
+  ],
+  total:"25만 – 32만원"
+}
+};
+
+const HJS=[
+ {h:"10:30",v:22,best:1,note:"<b>이론상 최적.</b> 오픈 직후라 종류가 가장 많고 줄도 거의 없어요. 다만 강남역 10시 출발이면 도착이 11시 이후라, 현실적인 목표는 다음 칸입니다."},
+ {h:"11:00",v:28,best:1,note:"<b>추천.</b> 강남에서 출발해 닿을 수 있는 가장 이른 시간. 종류 충분하고 대기 5분 내외예요. 세 코스 모두 이 구간에 넣었습니다."},
+ {h:"12:00",v:48,note:"점심시간이라 사람이 붙기 시작합니다. 그래도 회전이 빨라서 10분 안팎."},
+ {h:"13:00",v:66,note:"평일 오후 1시쯤 평소보다 사람이 많더라는 후기가 있는 구간. 줄은 계속 움직이지만 서 있는 시간이 늘어요."},
+ {h:"14:00",v:82,note:"<b>피하는 게 좋아요.</b> 성수 유동인구가 가장 몰리는 시간대와 겹칩니다. 게다가 15시 체크인과도 충돌해요."},
+ {h:"15:00",v:88,note:"<b>가장 피할 시간.</b> 팝업 방문객이 최고조입니다. 이때는 호텔에 있는 게 나아요."},
+ {h:"16:00",v:80,note:"여전히 붐빕니다. 이 시간에 갈 바엔 저녁 먹고 20시 이후를 노리세요."},
+ {h:"18:00",v:60,note:"사람은 줄기 시작하는데 인기 맛이 빠지기 시작합니다. 딸기나 요거트 계열을 원하면 위험 구간."},
+ {h:"20:00",v:34,note:"한산합니다. 대신 오렌지나 딸기 같은 인기 종류는 품절됐을 확률이 높아요. <b>남은 것 중에 고르는</b> 시간대."},
+ {h:"21:30",v:20,note:"마감 30분 전. 줄은 없지만 선택지도 거의 없습니다. 선물세트가 목적이면 이 시간은 피하세요."}
+];
+
+const CHECKS=[
+ {t:"오디세이 예매",s:"C안을 고른다면 전날까지. CGV 왕십리 IMAX 또는 메가박스 성수의 19시대 회차."},
+ {t:"우산 하나",s:"서울은 20%지만 속초 쪽은 60%예요. 서울에서 말릴 곳이 필요합니다."},
+ {t:"보조배터리 두 개",s:"지도와 예매, 사진에 하루 종일 씁니다. 하나로는 오후에 끊겨요."},
+ {t:"짐보관함 요금 준비",s:"호텔 1·2층 무인함, 대형 5시간 8,000원. 2025년 7월부터 무료 보관은 없어졌습니다."},
+ {t:"낮잠 알람 두 개",s:"본인 폰과 상대 폰 둘 다. 이 일정에서 제일 잘 깨지는 약속이에요."},
+ {t:"목요일 팝업 목록 확인",s:"성수 팝업은 주 단위로 바뀝니다. 전날 밤에 세 개만 찍어두면 당일에 안 헤매요."},
+ {t:"저녁집 예약 또는 웨이팅",s:"그리노, 아웃오브오더, 브리비트 모두 자리가 작습니다. 예약 앱으로 미리."},
+ {t:"돌아가는 버스표",s:"동서울(강변역)에서 속초행 막차 21:00. 16시 배웅이면 여유롭지만 좌석은 미리."},
+ {t:"한정선 보냉백",s:"냉장 2일 이내 섭취 권장. 가져갈 거면 둘째 날 사고 보냉백을 요청하세요."}
+];
+
+const ACCENT={A:["--mint","--mint-s"],B:["--coral","--coral-s"],C:["--grape","--grape-s"]};
+let rain=false, cur="A";
+const $=s=>document.querySelector(s);
+
+/* picker */
+$("#picker").innerHTML=Object.keys(PLANS).map(k=>{
+  const p=PLANS[k];
+  return `<button class="pcard" role="tab" data-plan="${k}" aria-selected="${k==='A'}">
+    ${ART[k]}
+    <span class="txt"><span class="nm">${p.nm}</span><span class="tg">${p.tg}</span>
+    <span class="won">₩ ${p.won}</span></span></button>`;
+}).join("");
+
+function row(it){
+  const meta=(it.meta&&it.meta.length)?`<p class="meta">${it.meta.map(m=>`<span>${m}</span>`).join("")}</p>`:"";
+  const swap=(rain&&it.rain)?`<p class="rn"><b>비 오면 →</b> ${it.rain}</p>`:"";
+  const fx=it.fix?`<span class="fx">고정</span>`:"";
+  const d=it.dsc?`<p class="dsc">${it.dsc}</p>`:"";
+  return `<div class="row${it.fix?" fix":""}"><div class="tm">${it.t}</div>
+    <div class="bd"><p class="ttl">${it.ttl}${fx}</p>${d}${meta}${swap}</div></div>`;
+}
+
+function render(){
+  const p=PLANS[cur];
+  document.documentElement.style.setProperty("--a",`var(${ACCENT[cur][0]})`);
+  document.documentElement.style.setProperty("--a-s",`var(${ACCENT[cur][1]})`);
+  $("#thesis").textContent=p.thesis;
+  $("#loadTx").textContent=p.loadTx;
+  $("#dots").innerHTML=Array.from({length:5},(_,i)=>`<i class="${i<p.load?"on":""}"></i>`).join("");
+  $("#panel").innerHTML=`
+    <div class="day"><p class="daylb"><span class="pill">첫째 날</span><span class="sub">09.03 THU</span></p>
+      <div class="tl">${p.d1.map(row).join("")}</div></div>
+    <div class="day"><p class="daylb"><span class="pill">둘째 날</span><span class="sub">09.04 FRI</span></p>
+      <div class="tl">${p.d2.map(row).join("")}</div></div>
+    <div class="bud"><h3>${p.nm} 예상 비용</h3>
+      <p class="cap">2인 기준 · 숙박비와 속초 왕복 버스는 제외</p>
+      ${p.cost.map(c=>`<div class="li"><span>${c[0]}</span><span>${c[1]}</span></div>`).join("")}
+      <div class="tot"><span class="lb">합계</span><span class="vl">${p.total}</span></div>
+      <p class="out">성수 평균 시세를 바탕으로 한 추정치예요. 소품샵이나 팝업에서 뭘 사면 그만큼 더 듭니다. 한정선 선물세트는 6구 32,000원, 9구 45,000원이라 따로 잡으셔야 해요.</p>
+    </div>`;
+  document.querySelectorAll(".pcard").forEach(b=>b.setAttribute("aria-selected",b.dataset.plan===cur));
+}
+
+$("#picker").addEventListener("click",e=>{
+  const b=e.target.closest(".pcard"); if(!b) return;
+  cur=b.dataset.plan; render();
+});
+
+const rb=$("#rainBtn");
+rb.addEventListener("click",()=>{
+  rain=!rain; rb.setAttribute("aria-pressed",rain);
+  $("#rainLabel").textContent=rain?"비 대비 켜짐":"비 대비 끄기";
+  render();
+});
+
+$("#bars").innerHTML=HJS.map((d,i)=>
+  `<button class="bar${d.best?" best":""}" data-i="${i}" aria-pressed="false" aria-label="${d.h} 혼잡도">
+   <span class="fl" style="height:${d.v}%"></span></button>`).join("");
+$("#xax").innerHTML=HJS.map(d=>`<span>${d.h}</span>`).join("");
+$("#bars").addEventListener("click",e=>{
+  const b=e.target.closest(".bar"); if(!b) return;
+  document.querySelectorAll(".bar").forEach(x=>x.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true");
+  const d=HJS[+b.dataset.i];
+  $("#cout").innerHTML=`<span class="hh">${d.h}</span> — ${d.note}`;
+});
+
+$("#checks").innerHTML=CHECKS.map((c,i)=>
+  `<button class="chk" aria-pressed="false" data-i="${i}"><span class="bx" aria-hidden="true">✓</span>
+   <span class="lb">${c.t}<small>${c.s}</small></span></button>`).join("");
+$("#checks").addEventListener("click",e=>{
+  const b=e.target.closest(".chk"); if(!b) return;
+  b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true");
+});
+
+render();
+</script>
+</body>
+</html>
